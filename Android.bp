@@ -19,6 +19,9 @@ java_library {
     name: "zxing-core",
     host_supported: true,
     installable: false,
+    // pure java, no android imports. pin to a public sdk or apps built against
+    // the Android API blow up on the private-API link check.
+    sdk_version: "current",
     srcs: [
         "core/src/main/**/*.java",
     ],
